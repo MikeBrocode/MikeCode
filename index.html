@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Online Assistance Form for SSS, PhilHealth, and Pag-IBIG transactions">
+    <title>Online Assistance</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add this line after your existing stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <div class="container" style="display: none;">
+        <header>
+            <div class="header-content">
+                <div class="header-logo">
+                    <img src="DC E2.PNG" alt="E-Services Logo" class="logo">
+                </div>
+                <h1 class="main-title">ONLINE ASSISTANCE FORM</h1>
+                <div class="header-actions">
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <form id="assistanceForm" novalidate>
+            <div class="form-section personal-info">
+                <h2>Personal Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Complete Name:</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crn_sss">CRN/SSS #:</label>
+                        <input type="text" id="crn_sss" required pattern="\d{2}-\d{7}-\d" 
+                               title="Format: XX-XXXXXXX-X" placeholder="XX-XXXXXXX-X">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="philhealth">PHILHEALTH #:</label>
+                        <input type="text" id="philhealth" required pattern="\d{2}-\d{9}-\d" 
+                               title="Format: XX-XXXXXXXXX-X" placeholder="XX-XXXXXXXXX-X">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pag-ibig">PAG-IBIG #:</label>
+                        <input type="text" id="pag-ibig" required pattern="\d{2}-\d{9}-\d" 
+                               title="Format: XX-XXXXXXXXX-X" placeholder="XX-XXXXXXXXX-X">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthdate">Birthdate:</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cellphone">Cellphone #:</label>
+                        <input type="tel" id="cellphone" required pattern="09\d{9}" 
+                               title="Format: 09XXXXXXXXX" placeholder="09XXXXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail Address:</label>
+                        <input type="email" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="civilStatus">Civil Status:</label>
+                        <select id="civilStatus" required>
+                            <option value="" disabled selected>Select your civil status</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Divorced">Divorced</option>
+                            <option value="Widowed">Widowed</option>
+                            <option value="Separated">Separated</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="religion">Religion:</label>
+                        <select id="religion" required>
+                            <option value="" disabled selected>Select your religion</option>
+                            <option value="Roman Catholic">Roman Catholic</option>
+                            <option value="Islam">Islam</option>
+                            <option value="Iglesia ni Cristo">Iglesia ni Cristo</option>
+                            <option value="Seventh Day Adventist">Seventh Day Adventist</option>
+                            <option value="Church of Christ">Church of Christ</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <input type="text" id="otherReligion" class="other-input" placeholder="Please specify your religion" style="display: none;">
+                    </div>                
+    
+                    <div class="form-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" required min="50" max="250" title="Enter height in cm (50–250)">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" id="weight" required min="20" max="300" title="Enter weight in kg (20–300)">
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-section sss-credentials">
+                <h2>SSS Online Account</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="sssUserID">SSS User ID:</label>
+                        <input type="text" id="sssUserID" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sssPassword">Password:</label>
+                        <div class="password-container">
+                            <input type="password" id="sssPassword" required 
+                                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$"
+                                   title="Password must meet all requirements below">
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        <div class="password-strength-meter">
+                            <p>Password Requirements:</p>
+                            <ul>
+                                <li class="requirement length">At least 8 characters</li>
+                                <li class="requirement uppercase">At least 1 uppercase letter</li>
+                                <li class="requirement lowercase">At least 1 lowercase letter</li>
+                                <li class="requirement number">At least 1 number</li>
+                                <li class="requirement special">At least 1 special character (@$!%*?&#)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section additional-info">
+                <h2>Additional Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="remarks">Remarks:</label>
+                        <textarea id="remarks" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fbAccount">FB Account:</label>
+                        <input type="text" id="fbAccount" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section transaction-info">
+                <h2>Transaction Details</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="transactionCategory">Transaction Category:</label>
+                        <select id="transactionCategory" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="SSS">SSS Transactions</option>
+                            <option value="PHILHEALTH">PhilHealth Transactions</option>
+                            <option value="PAGIBIG">Pag-IBIG Transactions</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionType">Transaction Type:</label>
+                        <select id="transactionType" required>
+                            <option value="" disabled selected>Select transaction type</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="totalAmount">Amount to Pay:</label>
+                        <input type="text" id="totalAmount" readonly>
+                        <div id="printNote" class="note">Note: Additional printing fee may apply</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" id="submitBtn">Submit</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+        </form>
+
+        <button id="toggleTableBtn" class="toggle-table-btn">Show Submitted Information</button>
+
+        <section class="table-container hidden">
+            <div class="table-header">
+                <h2>Submitted Information</h2>
+                <button id="downloadExcel" class="download-btn">
+                    Download Excel
+                </button>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Complete Name</th>
+                            <th>CRN/SSS #</th>
+                            <th>PhilHealth #</th>
+                            <th>Pag-IBIG #</th>
+                            <th>Birthdate</th>
+                            <th>Cellphone #</th>
+                            <th>Address</th>
+                            <th>E-mail Address</th>
+                            <th>CivilStatus</th>
+                            <th>Religion</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                            <th>SSS User ID</th>
+                            <th>Password</th>
+                            <th>Remarks</th>
+                            <th>FB Account</th>
+                            <th>Transaction</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    
+    <div id="notification" class="notification">
+        Form submitted successfully! Data added to the table.
+    </div>
+
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        // Password requirements visibility handler
+        const passwordInput = document.getElementById('sssPassword');
+        const requirementsList = document.querySelector('.password-strength-meter');
+
+        passwordInput.addEventListener('input', function() {
+            if (this.value.length > 0) {
+                requirementsList.style.display = 'block';
+            } else {
+                requirementsList.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
