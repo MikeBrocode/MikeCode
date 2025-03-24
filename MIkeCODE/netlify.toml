@@ -1,6 +1,6 @@
 [build]
-  publish = "/"
-  command = ""
+  publish = "./"
+  command = "echo 'No build command specified'"
 
 [[redirects]]
   from = "/*"
