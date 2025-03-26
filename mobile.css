@@ -180,9 +180,9 @@
 
     #notification {
         position: fixed;
-        top: 50%;
+        top: 20px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0);
         width: 90%;
         max-width: 400px;
         z-index: 9999;
@@ -192,22 +192,58 @@
         -webkit-backdrop-filter: blur(8px);
         border-radius: 12px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-        padding: 20px;
+        padding: 16px;
         text-align: center;
-        font-size: 16px;
-        animation: fadeIn 0.3s ease-out;
+        font-size: 15px;
+        animation: slideInAndFade 2.5s ease-in-out forwards;
         margin: 0 auto;
+        pointer-events: none;
     }
 
-    @keyframes fadeIn {
-        from {
+    @keyframes slideInAndFade {
+        0% {
             opacity: 0;
-            transform: translate(-50%, -45%);
+            transform: translate(-50%, -20px);
         }
-        to {
+        10% {
             opacity: 1;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, 0);
         }
+        90% {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -20px);
+        }
+    }
+
+    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 12px 20px;
+        font-size: 15px;
+        width: 100%;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 8px 0;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .edit-btn:active, .delete-btn:active, button:active,
+    input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+        transform: scale(0.98);
+        opacity: 0.9;
     }
 
     .form-group.error input,
