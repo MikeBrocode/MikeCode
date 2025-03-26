@@ -1,0 +1,119 @@
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-logo img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    .main-title {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .form-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    input, select, textarea {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+        min-width: 120px;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .edit-btn, .delete-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #notification {
+        width: 90%;
+        left: 5%;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .loading-screen {
+        padding: 20px;
+    }
+
+    .loading-spinner {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Login and Register pages */
+    .login-container, .register-container {
+        padding: 15px;
+    }
+
+    .login-box, .register-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .login-logo img {
+        max-width: 120px;
+    }
+
+    .login-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .login-links {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* Password requirements */
+    .password-requirements {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .requirement {
+        margin: 5px 0;
+    }
+}
