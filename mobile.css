@@ -63,14 +63,23 @@
         padding: 5px;
     }
 
-    .edit-btn, .delete-btn {
-        padding: 12px;
-        font-size: 14px;
+    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 12px 20px;
+        font-size: 16px;
         width: 100%;
-        min-height: 44px;
+        min-height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 8px 0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .edit-btn:active, .delete-btn:active, button:active,
+    input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
+        transform: scale(0.98);
+        opacity: 0.9;
     }
 
     #notification {
