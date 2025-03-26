@@ -60,14 +60,14 @@
         gap: 20px;
     }
 
+    .form-group {
+        margin-bottom: 15px;
+    }
+
     .form-group label {
         font-size: 16px;
         margin-bottom: 8px;
         display: block;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
     }
 
     input, select, textarea {
@@ -188,11 +188,6 @@
         background-size: 16px;
         padding-right: 40px;
     }
-        width: 90%;
-        left: 5%;
-        padding: 10px;
-        font-size: 14px;
-    }
 
     .loading-screen {
         padding: 20px;
@@ -210,119 +205,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .form-section {
-        padding: 15px;
-        margin: 10px auto;
-    }
-
-    .header-logo img {
-        max-width: 120px;
-    }
-
-    .main-title {
-        font-size: 1.2rem;
-    }
-
-    th, td {
-        padding: 6px;
-        min-width: 100px;
-        font-size: 13px;
-    }
-
-    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-        padding: 12px 20px;
-        font-size: 14px;
-        min-height: 44px;
-    }
-
-    .login-box, .register-box {
-        width: 95%;
-        padding: 15px;
-    }
-
-    .password-requirements {
-        font-size: 11px;
-        padding: 8px;
-    }
-
-    #notification {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 400px;
-        z-index: 1100;
-        background: rgba(0, 0, 0, 0.8);
-        color: white;
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        padding: 16px;
-        text-align: center;
-        font-size: 15px;
-        animation: slideUp 0.3s ease-out;
-    }
-
-    @keyframes slideUp {
-        from {
-            transform: translate(-50%, 100%);
-            opacity: 0;
-        }
-        to {
-            transform: translate(-50%, 0);
-            opacity: 1;
-        }
-    }
-
-    .form-group.error input,
-    .form-group.error select,
-    .form-group.error textarea {
-        border-color: #ff4444;
-        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
-    }
-
-    .error-message {
-        color: #ff4444;
-        font-size: 13px;
-        margin-top: 4px;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .form-section input:focus,
-    .form-section select:focus,
-    .form-section textarea:focus {
-        outline: none;
-        border-color: #8B1C1C;
-        box-shadow: 0 0 0 2px rgba(139, 28, 28, 0.1);
-    }
-
-    .form-section select {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 16px;
-        padding-right: 40px;
-    }
-        width: 95%;
-        left: 2.5%;
-        padding: 8px;
-        font-size: 13px;
     }
 
     .login-box, .register-box {
@@ -386,5 +268,40 @@
 
     .logout-btn:hover {
         background-color: var(--secondary-color);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .form-section {
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    .header-logo img {
+        max-width: 120px;
+    }
+
+    .main-title {
+        font-size: 1.2rem;
+    }
+
+    th, td {
+        padding: 6px;
+        min-width: 100px;
+        font-size: 13px;
+    }
+
+    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 44px;
     }
 }
