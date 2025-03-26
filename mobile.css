@@ -1,83 +1,22 @@
-/* Mobile-specific styles */
-@media screen and (max-width: 1024px) {
-    .container {
-        padding: 15px;
-        max-width: 100%;
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
-
-    .form-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-}
-
+/* Mobile Styles */
 @media screen and (max-width: 768px) {
-    /* Base container adjustments */
-    body {
-        font-size: 16px;
-        line-height: 1.5;
-        -webkit-text-size-adjust: 100%;
-    }
-
-    /* Improved container spacing */
     .container {
-        padding: 15px;
+        padding: 10px;
         max-width: 100%;
-        margin: 0 auto;
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: white;
-        z-index: 999;
-        padding: 10px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .header-content {
-        position: relative;
-        display: flex;
         flex-direction: column;
-        align-items: center;
         text-align: center;
-        gap: 15px;
         padding: 10px;
     }
 
-    .logout-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-        padding: 8px 16px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        min-height: 36px;
-        min-width: 36px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        margin: 0;
+    .header-logo {
+        margin-bottom: 10px;
     }
 
-    .logout-btn:hover {
-        background-color: var(--secondary-color);
-        transform: scale(0.98);
-    }
-    .header-logo img {
+    .logo {
         max-width: 150px;
-        margin-bottom: 10px;
     }
 
     .main-title {
@@ -86,66 +25,73 @@
     }
 
     .form-section {
-        padding: 20px;
-        margin: 150px auto 15px;
-        max-width: 100%;
-        background: #ffffff;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        border-radius: 16px;
-        position: relative;
-        z-index: 2;
-        overflow: visible;
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
     .form-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        width: 100%;
-        padding: 0;
+        gap: 15px;
     }
 
     .form-group {
-        margin-bottom: 25px;
-        position: relative;
-        width: 100%;
-        max-width: 100%;
-        overflow: visible;
-        display: block;
-    }
-
-    .form-group label {
-        font-size: 16px;
-        margin-bottom: 10px;
-        display: block;
-        color: #333;
-        font-weight: 500;
+        margin-bottom: 15px;
     }
 
     input, select, textarea {
-        padding: 14px;
-        font-size: 16px;
         width: 100%;
-        min-width: 0;
-        border: 2px solid #ddd;
-        border-radius: 12px;
-        -webkit-appearance: none;
-        appearance: none;
-        background-color: #fff;
-        transition: all 0.3s ease;
-        box-sizing: border-box;
+        padding: 12px;
+        font-size: 16px;
     }
 
-    input:focus, select:focus, textarea:focus {
-        border-color: var(--primary-color);
-        box-shadow: 0 0 0 3px rgba(139, 28, 28, 0.1);
-        outline: none;
+    .password-container {
+        width: 100%;
+    }
+
+    .toggle-password {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .password-strength-meter {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-actions button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .toggle-table-btn {
+        width: 100%;
+        margin: 15px 0;
+        padding: 12px;
+        font-size: 16px;
     }
 
     .table-container {
+        padding: 10px;
+    }
+
+    .table-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
+
+    .table-responsive {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 0 -15px;
-        padding: 0 15px;
     }
 
     table {
@@ -157,136 +103,13 @@
         min-width: 120px;
     }
 
-    .action-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        padding: 5px;
-    }
-
-    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-        padding: 14px 24px;
-        font-size: 16px;
-        width: 100%;
-        min-height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10px 0;
-        border-radius: 10px;
-        transition: all 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-        user-select: none;
-    }
-
-    .edit-btn:active, .delete-btn:active, button:active,
-    input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
-        transform: scale(0.98);
-        opacity: 0.9;
-    }
-
-    #notification {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translate(-50%, 0);
+    .notification {
         width: 90%;
-        max-width: 400px;
-        z-index: 9999;
-        background: rgba(0, 0, 0, 0.9);
-        color: white;
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-        padding: 16px;
-        text-align: center;
-        font-size: 15px;
-        animation: slideInAndFade 2.5s ease-in-out forwards;
-        margin: 0 auto;
-        pointer-events: none;
+        font-size: 14px;
+        padding: 12px;
     }
 
-    @keyframes slideInAndFade {
-        0% {
-            opacity: 0;
-            transform: translate(-50%, -20px);
-        }
-        10% {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-        90% {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-        100% {
-            opacity: 0;
-            transform: translate(-50%, -20px);
-        }
-    }
-
-    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-        padding: 12px 20px;
-        font-size: 15px;
-        width: 100%;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 8px 0;
-        border-radius: 8px;
-        transition: all 0.2s ease;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-        user-select: none;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        font-weight: 500;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .edit-btn:active, .delete-btn:active, button:active,
-    input[type="submit"]:active, input[type="reset"]:active, input[type="button"]:active {
-        transform: scale(0.98);
-        opacity: 0.9;
-    }
-
-    .form-group.error input,
-    .form-group.error select,
-    .form-group.error textarea {
-        border-color: #ff4444;
-        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
-    }
-
-    .error-message {
-        color: #ff4444;
-        font-size: 13px;
-        margin-top: 4px;
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .form-section input:focus,
-    .form-section select:focus,
-    .form-section textarea:focus {
-        outline: none;
-        border-color: #8B1C1C;
-        box-shadow: 0 0 0 2px rgba(139, 28, 28, 0.1);
-    }
-
-    .form-section select {
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 16px;
-        padding-right: 40px;
-    }
-
+    /* Loading Screen */
     .loading-screen {
         padding: 20px;
     }
@@ -295,143 +118,29 @@
         width: 40px;
         height: 40px;
     }
-
-    /* Login and Register pages */
-    .login-container, .register-container {
-        padding: 20px;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f5f5f5;
-    }
-
-    .login-box, .register-box {
-        width: 90%;
-        max-width: 400px;
-        padding: 25px;
-        background: #ffffff;
-        border-radius: 16px;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        margin: 20px auto;
-    }
-
-    .login-logo img {
-        max-width: 120px;
-    }
-
-    .login-btn, #submitBtn, #resetBtn {
-        padding: 16px;
-        font-size: 16px;
-        width: 100%;
-        min-height: 52px;
-        margin: 20px 0 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .login-links {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        font-size: 15px;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .login-links a {
-        color: var(--primary-color);
-        text-decoration: none;
-        padding: 8px;
-        border-radius: 8px;
-        transition: background-color 0.2s ease;
-    }
-
-    .login-links a:active {
-        background-color: rgba(139, 28, 28, 0.1);
-    }
-
-    /* Password requirements */
-    .password-requirements {
-        font-size: 12px;
-        padding: 10px;
-    }
-
-    .requirement {
-        margin: 5px 0;
-    }
-
-    .logout-btn {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-        padding: 10px 20px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        min-height: 44px;
-        min-width: 100px;
-        width: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        margin: 0;
-        -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-        transition: all 0.2s ease;
-    }
-
-    .logout-btn:hover {
-        background-color: var(--secondary-color);
-        transform: scale(0.98);
-    }
 }
 
+/* Small Mobile Devices */
 @media screen and (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .form-section {
-        padding: 15px;
-        margin: 10px auto;
-    }
-
-    .header-logo img {
-        max-width: 120px;
-    }
-
     .main-title {
         font-size: 1.2rem;
     }
 
-    th, td {
-        padding: 6px;
-        min-width: 100px;
-        font-size: 13px;
+    .form-section h2 {
+        font-size: 1.1rem;
     }
 
-    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-        padding: 12px 20px;
+    input, select, textarea {
         font-size: 14px;
-        min-height: 44px;
+        padding: 10px;
+    }
+
+    .table-responsive {
+        margin: 0 -10px;
+    }
+
+    .notification {
+        width: 95%;
+        font-size: 13px;
     }
 }
