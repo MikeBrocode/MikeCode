@@ -87,13 +87,13 @@
 
     .form-section {
         padding: 20px;
-        margin: 80px auto 15px;
+        margin: 150px auto 15px;
         max-width: 100%;
         background: #ffffff;
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         border-radius: 16px;
         position: relative;
-        z-index: 1;
+        z-index: 2;
         overflow: visible;
     }
 
