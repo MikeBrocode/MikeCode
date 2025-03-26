@@ -54,7 +54,7 @@
         z-index: 1000;
         padding: 8px 16px;
         background-color: var(--primary-color);
-        color: white;
+        color: rgb(0, 0, 0);
         border: none;
         border-radius: 6px;
         font-size: 14px;
