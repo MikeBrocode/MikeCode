@@ -1,7 +1,29 @@
 /* Mobile-specific styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .container {
-        padding: 10px;
+        padding: 20px;
+        max-width: 95%;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Base container adjustments */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Improved container spacing */
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     header {
@@ -11,6 +33,8 @@
     .header-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
+        padding: 10px;
     }
 
     .header-logo img {
@@ -24,13 +48,22 @@
     }
 
     .form-section {
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 100%;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        border-radius: 12px;
     }
 
     .form-grid {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 20px;
+    }
+
+    .form-group label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        display: block;
     }
 
     .form-group {
@@ -38,12 +71,20 @@
     }
 
     input, select, textarea {
-        padding: 8px;
-        font-size: 14px;
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        -webkit-appearance: none;
+        appearance: none;
     }
 
     .table-container {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0 -15px;
+        padding: 0 15px;
     }
 
     table {
@@ -64,16 +105,19 @@
     }
 
     .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
-        padding: 12px 20px;
+        padding: 14px 24px;
         font-size: 16px;
         width: 100%;
         min-height: 48px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 8px 0;
-        border-radius: 8px;
+        margin: 10px 0;
+        border-radius: 10px;
         transition: all 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+        user-select: none;
     }
 
     .edit-btn:active, .delete-btn:active, button:active,
@@ -83,6 +127,67 @@
     }
 
     #notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1100;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 16px;
+        text-align: center;
+        font-size: 15px;
+        animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translate(-50%, 100%);
+            opacity: 0;
+        }
+        to {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+    }
+
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+        border-color: #ff4444;
+        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
+    }
+
+    .error-message {
+        color: #ff4444;
+        font-size: 13px;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .form-section input:focus,
+    .form-section select:focus,
+    .form-section textarea:focus {
+        outline: none;
+        border-color: #8B1C1C;
+        box-shadow: 0 0 0 2px rgba(139, 28, 28, 0.1);
+    }
+
+    .form-section select {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        padding-right: 40px;
+    }
         width: 90%;
         left: 5%;
         padding: 10px;
@@ -100,7 +205,124 @@
 
     /* Login and Register pages */
     .login-container, .register-container {
+        padding: 20px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .form-section {
         padding: 15px;
+        margin: 10px auto;
+    }
+
+    .header-logo img {
+        max-width: 120px;
+    }
+
+    .main-title {
+        font-size: 1.2rem;
+    }
+
+    th, td {
+        padding: 6px;
+        min-width: 100px;
+        font-size: 13px;
+    }
+
+    .edit-btn, .delete-btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 44px;
+    }
+
+    .login-box, .register-box {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .password-requirements {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    #notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        z-index: 1100;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 16px;
+        text-align: center;
+        font-size: 15px;
+        animation: slideUp 0.3s ease-out;
+    }
+
+    @keyframes slideUp {
+        from {
+            transform: translate(-50%, 100%);
+            opacity: 0;
+        }
+        to {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+    }
+
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+        border-color: #ff4444;
+        box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.1);
+    }
+
+    .error-message {
+        color: #ff4444;
+        font-size: 13px;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .form-section input:focus,
+    .form-section select:focus,
+    .form-section textarea:focus {
+        outline: none;
+        border-color: #8B1C1C;
+        box-shadow: 0 0 0 2px rgba(139, 28, 28, 0.1);
+    }
+
+    .form-section select {
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        padding-right: 40px;
+    }
+        width: 95%;
+        left: 2.5%;
+        padding: 8px;
+        font-size: 13px;
     }
 
     .login-box, .register-box {
@@ -140,24 +362,26 @@
     }
 
     .logout-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 100;
-        padding: 8px 16px;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 1000;
+        padding: 12px 20px;
         background-color: var(--primary-color);
         color: white;
         border: none;
-        border-radius: 4px;
-        font-size: 14px;
+        border-radius: 8px;
+        font-size: 16px;
         cursor: pointer;
-        min-height: 36px;
-        min-width: 36px;
+        min-height: 44px;
+        min-width: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         margin: 0;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
     }
 
     .logout-btn:hover {
