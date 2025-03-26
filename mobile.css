@@ -87,18 +87,21 @@
 
     .form-section {
         padding: 20px;
-        margin: 15px auto;
+        margin: 80px auto 15px;
         max-width: 100%;
         background: #ffffff;
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         border-radius: 16px;
         position: relative;
         z-index: 1;
+        overflow: visible;
     }
 
     .form-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        width: 100%;
+        padding: 0;
     }
 
     .form-group {
@@ -107,6 +110,7 @@
         width: 100%;
         max-width: 100%;
         overflow: visible;
+        display: block;
     }
 
     .form-group label {
