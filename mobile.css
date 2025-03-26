@@ -58,12 +58,19 @@
     .action-buttons {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 10px;
+        width: 100%;
+        padding: 5px;
     }
 
     .edit-btn, .delete-btn {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 12px;
+        font-size: 14px;
+        width: 100%;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #notification {
@@ -96,9 +103,15 @@
         max-width: 120px;
     }
 
-    .login-btn {
-        padding: 10px;
-        font-size: 14px;
+    .login-btn, #submitBtn, #resetBtn {
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        min-height: 44px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .login-links {
@@ -119,16 +132,22 @@
 
     .logout-btn {
         position: fixed;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 15px;
         z-index: 1000;
-        padding: 8px 15px;
+        padding: 10px 20px;
         background-color: var(--primary-color);
         color: white;
         border: none;
         border-radius: 4px;
-        font-size: 14px;
+        font-size: 16px;
         cursor: pointer;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .logout-btn:hover {
