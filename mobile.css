@@ -143,4 +143,31 @@
         width: 95%;
         font-size: 13px;
     }
+    
+    .logout-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        padding: 8px 16px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        min-height: 36px;
+        min-width: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        margin: 0;
+    }
+
+    .logout-btn:hover {
+        background-color: var(--secondary-color);
+        transform: scale(0.98);
+    }
 }
